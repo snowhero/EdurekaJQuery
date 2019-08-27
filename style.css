@@ -1,0 +1,25 @@
+.heroes {
+    float: left;
+}
+
+img {
+    width: 450px;
+    height: 250px;
+}
+
+.styleclass {
+    border: 5px solid green;
+}
+
+#drag { 
+    width: 150px;
+    height: 60px;
+    background-color: blueviolet;
+}
+
+#drop {
+    width: 400px;
+    height: 400px;
+    float: right;
+    background-color: aquamarine;
+}

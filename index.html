@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Tutorial Edureka</title>
+        <!-- jQuery Core cdn minified version -->
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+        </script>
+        <!-- jQuery UI cdn minified version -->
+        <script
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous">
+        </script>
+        <!-- cdn access to jQuery themes https://stackoverflow.com/questions/820412/downloading-jquery-ui-css-from-googles-cdn -->
+        <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>jQuery Tutorial</h1>
+        <p>By Edureka</p>
+        <div id='drag'>
+            <p style="color: white; text-align: center">Drag me around!!!</p>
+        </div>
+        <ul>
+            <li>Sasuke <a href="#">Uchiha</a></li>
+            <li>Noctis Lucis Caelem</li>
+            <li>Vincent Valentine</li>
+        </ul>
+        <button id="fadeO">Fade out</button>
+        <button id="fadeI">Fade in</button>
+        <div class="heroes">
+            <img id="one" src="/img/sasuke.jpg" alt="sasuke">
+            <img id="two" src="/img/noctis.jpg" alt="noctis">
+            <img id="three" src="/img/vincent.jpg" alt="vincent">
+        </div>
+        <input type="text" id="sometext">
+        <button id="sub">Submit</button>
+        <input type="text" id="press" size="10">
+        <div id="drop">
+            <p>Drop here!!!</p>
+        </div>
+        <input type="text" id="date" size="10">
+
+
+        <script>
+            $(document).ready(function() {
+                // Ojects like these can be used for the $('item').css(design) to add styles
+                let design = {
+                    color: 'blue',
+                    background: 'green',
+                    border: '3px solid black'
+                };
+                $('#sub').click(function() {
+                    alert('Value: ' + $('#sometext').val());
+                    $('img').addClass('styleclass');
+                });
+                $('img').click(function() {
+                    $(this).hide() // this --> mean the item that is being clicked (target)
+                });
+                $('#press').on('keypress', function() {
+                    $('p').hide();
+                });
+                $('#fadeO').click(function() {
+                    $('#one').fadeOut('slow');
+                    $('#two').fadeOut('slow');
+                    $('#three').fadeOut('slow');
+                });
+                $('#fadeI').click(function() {
+                    $('#one').fadeIn('fast');
+                    $('#two').fadeIn('slow');
+                    $('#three').fadeIn('slow');
+                });
+                $('#drag').draggable();
+                $('#drop').droppable();
+                $('#date').datepicker();
+            });
+        </script>
+        <!--
+            Structure: $(selector).action()
+            Some syntax to test for tutorial:
+            - $('item').text('string that will replace')
+            - $('item').css('style code')
+            - $('item').before('code content like html')
+            - $('item').after('code content like html')
+            - $('item').html('code content that will replace')
+            - $('item').attr(attribute, value) >>> Works kind of like css
+            - $('item').val(value)
+            - $('item').click() >>> Event listener for click
+            - $('item').addClass('class name without the period')
+            - $('item').toggleClass('class name without the period') >>> add or remove class
+            - $('item').removeClass('class name without the period')
+            - $('item').on()
+            - $('item').keypress(function() {})
+            - $('item').hide()
+            - $('item').show()
+            - $('item').fadeIn(speed, callback)
+            - $('item').fadeOut(speed, callback)
+            - $('item').slideDown(speed,callback) >>> Perfect for dropdowns
+            - $('item').slideUp(speed,callback) >>> Perfect for dropdowns
+
+            // UI wit jQuery
+            - $('item').draggable()
+            - $('item').droppable()
+            - $('item').datepicker()
+        -->
+    </body>
+</html>
